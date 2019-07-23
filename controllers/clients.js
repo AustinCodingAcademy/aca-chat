@@ -1,8 +1,6 @@
-let clientId = require("../clients");
+let clientId = require("../index");
 
 exports.create = function create(req, res) {
-    // let newClient = req.body;
-    // clients.push(newClient);
-    clientId +=
+    req.body = clientId +=
     res.send(clientId.toString())
 }

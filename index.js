@@ -7,6 +7,7 @@ let messageRoutes = require('./routes/messages');
 
 const app = express();
 app.use(bodyParser.json());
+app.use(express.static("public"));
 
 let clientId = 0;
 
@@ -19,7 +20,6 @@ const messages = [
 
 app.use(clientRoutes);
 app.use(messageRoutes);
-
 
 app.listen(8080, (err) => {
  if (err) {
