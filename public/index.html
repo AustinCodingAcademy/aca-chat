@@ -8,6 +8,13 @@
    
 </head>
 <body>
+    <h1>ACA-Chat</h1>
+    <form>
+        <input id="inputtext" type="text" placeholder="type here">
+        <button type="submit" onClick="postMessage(event)">Send</button>
+    </form>
+    <button onClick="getMessages(event)">Get Messages</button>
+    <div id="main"></div>
     <script src="chat.js"></script>   
 </body>
 </html>
