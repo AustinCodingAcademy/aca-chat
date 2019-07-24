@@ -1,22 +1,40 @@
-let client;
+let clientId = 0;
 
-window.onload () {
+window.onload = function() {
     fetch("http://localhost:8080/clients", {
         method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: clientId.toString(),
+        headers: {'Content-Type': 'application/json'},
     })
+    .then(res => res.json())
+    .then(data => clientId = data.id)
 }
 
 function send() {
-    let go = document.getElementById("mess").value;
-    fetch("http://localhost:8080/clients", {
+    let message = document.getElementById("text").value;
+    let obj = {
+        clientId: clientId,
+        message: message
+    }
+    console.log("obj: " + JSON.stringify(obj));
+    fetch("http://localhost:8080/messages", {
         method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(go),
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(obj)
     })
+    .then(res=>res.json())
+    .then(data=>console.log(data))
+    document.getElementById("text").innerHTML = "";
 }
+
+setInterval(function(){ 
+    let messagesDiv = document.getElementById('messages')
+    let displayMsg = '';
+    fetch('http://localhost:8080/messages')
+        .then(response => response.json())
+        .then(data => {
+            data.map(m => {
+            displayMsg += `<div>${m.message}</div>`
+        })
+        messagesDiv.innerHTML = displayMsg;
+    }) 
+}, 1000);

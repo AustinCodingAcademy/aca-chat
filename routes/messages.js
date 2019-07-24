@@ -1,8 +1,22 @@
-const express = require("express");
-const router = express.Router();
-const {list, create} = require("../controllers/messages")
+var express = require('express')
+var router = express.Router();
 
-router.get("/clients", list);
-router.post("/clients", create);
+var messages = [
+  {
+    clientId: 0,
+    message: "Welcome To Chat"
+  }
+];
+
+router.post('/messages', (req,res)=>{
+    console.log(req);
+    let message = req.body;
+    messages.push(message);
+    res.send(messages)
+})
+
+router.get('/messages', (req,res)=>{
+    res.send(messages);
+})
 
 module.exports = router;
