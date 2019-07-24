@@ -20,7 +20,7 @@ let createDOM = () => {
     let domBody = document.querySelector('body');
     let newDiv = document.createElement('div');
     newDiv.innerHTML = `
-        <input type="text" id="input_message">
+        <input type="text" id="input_message" value="">
         <button id="send" onclick="sendMessage()">Send</button>
         <div id="history"></div>
     `
@@ -28,23 +28,25 @@ let createDOM = () => {
 }
 
 let sendMessage = () => {
-    let message = document.querySelector('#input_message').value;
+    let inputField = document.querySelector('#input_message');
+    let bodyPost = {
+        clientId: userId,
+        text: inputField.value
+    }
     let options = {
         method: 'POST',
-        header: {
+        body: JSON.stringify(bodyPost),
+        headers: {
             'Content-Type': 'application/json'
-        },
-        body: {
-            'clientId': userId,
-            'text': message
         }
     }
     fetch('/messages', options)
         .then(res => res.json())
-        .then(data => data)
+        .then(data => console.log(JSON.stringify(data)))
         .catch(err => console.log(`Err: ${err}`))
+    inputField.value = '';
 }
-
+ 
 window.onload = () => {
     fetchUserId();
     createDOM();
@@ -55,14 +57,12 @@ setInterval(function() {
         .then(res => res.json())
         .then(data => {
             let message = data;
+            console.log(data);
             let messageThread = document.querySelector('#history');
             let domHolder = '';
             message.forEach(x => {
                 domHolder += `
-                <div>${x.clientId}:</div>
-                <div>${x.text}</div>
-                <br>
-                <br>
+                <div>${x.clientId}: ${x.text}</div>
                 `
             })
             messageThread.innerHTML = domHolder;

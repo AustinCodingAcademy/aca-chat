@@ -1,10 +1,12 @@
 const express = require('express');
-const app = express();
 const bodyParser = require('body-parser');
+
+const app = express();
+
+app.use(bodyParser.json());
 
 const thePort = 8080;
 
-app.use(bodyParser.json());
 app.listen(thePort, (err) => {
   err ? console.log('Error:' + err) : app.use(express.static('public'));
   console.log(`The web server is now working on port ${thePort}`);
@@ -26,7 +28,8 @@ app.post('/clients', (req, res) => {
 
 app.post('/messages', (req, res) => {
   let message = req.body;
-  messages.push(res.json(message));
+  messages.push(message);
+  res.json(message);
 });
 
 app.get('/messages', (req, res) => {
