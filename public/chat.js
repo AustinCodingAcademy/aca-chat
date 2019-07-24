@@ -1,4 +1,5 @@
-var clientId;
+var clientId = 0;
+
 window.onload = function(){
     fetch('/clients', {
         method: 'POST',
@@ -9,17 +10,31 @@ window.onload = function(){
 }
 
 function postInputTxt(){
+    var clientId = 0;
    let text = document.getElementById('inputTxt').value;
+   let obj = {
+        clientId: clientId,
+        text: text
+    }
+    console.log(obj);
    fetch('/messages', {
         method: 'POST',
-        headers:{'Content-Type': 'application/json'},
-        body: JSON.stringify({
-            'clientId':clientId,
-            'text':text
-        })
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(obj)
     })
+    .then(response => response.json())
+    .then(data => console.log(data))
 }
 
 setInterval(function(){ 
-    alert("Hello"); 
+    let messagesDiv = document.getElementById('messages')
+    let displayMsg = '';
+    fetch('/messages')
+        .then(response => response.json())
+        .then(data => {
+            data.map(m => {
+            displayMsg += `<div>${m.text}</div>`
+        })
+        messagesDiv.innerHTML = displayMsg;
+    }) 
 }, 1000);

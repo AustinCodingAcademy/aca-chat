@@ -1,10 +1,7 @@
 var express = require('express')
 var router = express.Router();
-const bodyParser = require("body-parser");
-const app = express();
-app.use(bodyParser.json());
 
-const messages = [
+var messages = [
     {
       clientId: 0,
       text: "Welcome To Chat"
@@ -12,11 +9,15 @@ const messages = [
   ];
 
 
-router.post('/', function(req,res){
-    messages.text = req.body;
+router.post('/', (req,res)=>{
+    console.log(req);
+    let message = req.body;
+    messages.push(message);
     res.json(messages)
 })
 
-router.get('/', function(req,res){
+router.get('/', (req,res)=>{
     res.json(messages);
 })
+
+module.exports = router;
