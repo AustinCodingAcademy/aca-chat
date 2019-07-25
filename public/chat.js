@@ -5,12 +5,11 @@ window.onload = function(){
         method: 'POST',
         headers:{'Content-Type': 'application/json'},
     })
-    .then(response => response.json())
-    .then(data => clientId = data.id)
+    .then(response => response.text())
+    .then(data => clientId = data)
 }
 
 function postInputTxt(){
-    var clientId = 0;
    let text = document.getElementById('inputTxt').value;
    let obj = {
         clientId: clientId,
