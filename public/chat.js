@@ -5,8 +5,8 @@ window.onload = function() {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
     })
-    .then(res => res.json())
-    .then(data => clientId = data.id)
+    .then(res => res.text())
+    .then(data => clientId = data)
 }
 
 function send() {
