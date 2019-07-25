@@ -6,7 +6,6 @@ app.use(express.static("public"));
 
 let clientId = 0;
 
-
 const messages = [
   {
     clientId: 0,
@@ -18,17 +17,21 @@ const messages = [
 app.post('/clients', (req, res)=> {
   clientId += 1;
   res.send(clientId.toString())
-})
+});
 
 app.post('/messages', (req, res)=> {
   let message = req.body;
   messages.push(message);
-  res.json(messages);
-})
+  res.json(message);
+});
 
 app.get('/messages', (req, res) => {
   res.json(messages)
-})
+});
+
+// app.get('/', (req, res) => {
+//   res.json(messages)
+// });
 
 
 
