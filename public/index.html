@@ -3,18 +3,18 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>My Chatroom</title>
+    <title>ACA Chatroom</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
    
 </head>
-<body>
-    <h1>ACA-Chat</h1>
+<body style="font-family:monospace">
+    <h1>Smitty's ACA Chatroom</h1>
     <form>
-        <input id="inputtext" type="text" placeholder="type here">
+        <input id="inputtext" type="text" placeholder="type message here">
         <button type="submit" onClick="postMessage(event)">Send</button>
     </form>
-    <button onClick="getMessages(event)">Get Messages</button>
-    <div id="main"></div>
+ 
+    <div id="main"  style="border-bottom:1px solid black"></div>
     <script src="chat.js"></script>   
 </body>
 </html>
