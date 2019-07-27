@@ -3,17 +3,18 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="styelsheet" href="./chat_css.css">
     <title>My Store</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
    
 </head>
 <body>
-    <div id="chatDiv"></div>
-    <!-- <form class="textBox">
-        Type your chat in Box:<br>
-        <textarea class="input"></textarea>
-    </form>
-    <button type="button" id="chat" onclick="sendChat">Send Chat.</button> -->
-    <script src="chat.js" type="text/javascript"></script>   
+    <div id="chatDiv">
+        <h2>Type your chat in Box:</h2><br>
+        <textarea type="text" id="input"></textarea>
+    <button type="button" id="chat" onclick="sendChat()">Send Chat.</button>
+    <div id="messages"></div>
+    </div>
+    <script src="./chat.js" type="text/javascript"></script>   
 </body>
 </html>

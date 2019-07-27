@@ -1,5 +1,6 @@
 const express = require("express");
 const bodyParser= require("body-parser");
+const cors = require('cors');
 const thePort = 8080;
 let clientId = 0;
 
@@ -8,6 +9,7 @@ let clients = [];
 let app = express();
 app.use(bodyParser.json());
 app.use(express.static("public"));
+app.use(cors());
 
 app.listen(thePort, (err)=>{
   if(err){
@@ -24,7 +26,8 @@ app.post('/clients',(request, response)=>{
 })
 //post messages route
 app.post('/messages',(request, response)=>{
-  messages.push(request.body);
+  let message = request.body;
+  messages.push(message);
   console.log(messages);
   response.json(messages);
 })
