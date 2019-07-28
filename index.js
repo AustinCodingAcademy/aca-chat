@@ -21,9 +21,9 @@ app.post('/messages', (req,res) => {
   res.json(messages);
 })
 
-// * create a route for a get to `/messages`. In the callback, `response.json(message)`
+// * create a route for a get to `/messages`. In the callback, `response.json(messages)`
 app.get('/messages', (req, res)=> {
-  res.json(message);
+  res.json(messages);
 })
 
 
