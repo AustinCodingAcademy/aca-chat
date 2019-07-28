@@ -26,8 +26,7 @@ app.post('/clients',(request, response)=>{
 })
 //post messages route
 app.post('/messages',(request, response)=>{
-  let message = request.body;
-  messages.push(message);
+  messages.push(request.body);
   console.log(messages);
   response.json(messages);
 })
