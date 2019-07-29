@@ -1,5 +1,3 @@
-
-
 let clientId = 0;
 
 
