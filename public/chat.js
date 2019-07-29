@@ -54,3 +54,4 @@ function showMessages() {
         messageDisplay.innerHTML = message;
     })
 };
+setInterval(showMessages, 1000);
