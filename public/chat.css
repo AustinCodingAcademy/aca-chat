@@ -1,0 +1,17 @@
+body {
+    background-color: black;
+    color: limegreen;
+    font-family: monospace;
+}
+
+#user1 {
+    color: hotpink;
+}
+
+#user2 {
+    color: dodgerblue;
+}
+
+#time {
+    color: yellow;
+}

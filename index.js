@@ -18,7 +18,7 @@ app.get('/clients', (req, res)=>{
 
  app.post('/clients', (req, res) => {
   clientId =+ 1;
-  res.send(clientID.toString());
+  res.send(clientId.toString());
 })
 
 
