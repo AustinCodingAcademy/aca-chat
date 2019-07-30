@@ -4,6 +4,9 @@ body {
     font-family: monospace;
 }
 
+h1 {
+    color:orange;
+}
 #user1 {
     color: hotpink;
 }
