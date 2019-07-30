@@ -1,0 +1,32 @@
+{
+  "name": "aca-chat",
+  "version": "1.0.0",
+  "description": "chat messaging system",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daniela-idara/aca-chat.git"
+  },
+  "keywords": [
+    "chat",
+    "messenger",
+    "chat",
+    "app",
+    "server",
+    "express",
+    "chat"
+  ],
+  "author": "Daniela Archibong",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/daniela-idara/aca-chat/issues"
+  },
+  "homepage": "https://github.com/daniela-idara/aca-chat#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1"
+  }
+}

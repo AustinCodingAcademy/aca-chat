@@ -1,0 +1,38 @@
+body {
+    background-color: black;
+    color: limegreen;
+    font-family: monospace;
+}
+
+h1 {
+    color:orange;
+}
+
+h2 {
+    color: purple;
+}
+#user1 {
+    color: hotpink;
+}
+
+#name {
+    color: dodgerblue;
+}
+
+#time {
+    color: yellow;
+}
+
+#sendMsg {
+    width: 90%;
+}
+
+#input {
+    float: left;
+}
+#chat {
+    background-color: rgb(132, 0, 255);
+    border: black;
+    padding: 5px;
+    float:  left;
+}
