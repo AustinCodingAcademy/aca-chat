@@ -30,7 +30,6 @@ function sendTxt(){
  setInterval(function(){ 
     let messagesDiv = document.getElementById('messages');
     let displayMsg = '';
-    //let timestamp = Date().slice(4, 16) + " " + Date().slice(16, 28);
     fetch('/messages')
         .then(response => response.json())
         .then(data => {
@@ -41,6 +40,5 @@ function sendTxt(){
     }) 
 }, 1000);
 
-4
 
 

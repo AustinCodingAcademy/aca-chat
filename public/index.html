@@ -8,13 +8,14 @@
     <link rel="stylesheet" href="chat.css">
 </head>
 <body>
+        <h1>Chat Log</h1><br>
         <div id="chatDiv">
-                <h2>Type your message below:</h2><br>
-                <textarea type="text" id="input"></textarea>
-            <button type="button" id="chat" onclick="sendTxt()">Send</button>
-            <h1>Chat Log:</h1>
-            <div id ='messages'></div>
-            </div>
+            <div id ='messages'></div><br>
+                <div id="sendMsg">
+                    <textarea type="text" id="input" cols="35" placeholder="Type your message..."></textarea>
+                    <button type="button" id="chat" onclick="sendTxt()">Send</button>
+                </div>
+        </div>
 
     <script src="chat.js"></script>   
 </body>

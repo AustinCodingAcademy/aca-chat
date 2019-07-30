@@ -10,8 +10,6 @@ app.use(express.static("public"));
 
 //clients
 
-let clientId = 0;
-
 app.get('/clients', (req, res)=>{
   res.json(clients)
 })
@@ -40,7 +38,7 @@ const messages = [
   {
     clientId: 0,
     text: "Welcome To Chat",
-    time: "00:00:00"
+    time: getCurrentTime()
   }
 ];
 
