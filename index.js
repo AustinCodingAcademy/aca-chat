@@ -1,5 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+const dotenv = require('dotenv');
+dotenv.config();
 
 let clientRoutes = require('./routes/clients');
 let messageRoutes = require('./routes/messages');
@@ -11,7 +13,11 @@ app.use(express.static("public"));
 app.use(clientRoutes);
 app.use(messageRoutes);
 
-app.listen(8080, (err) => {
+const mongoose = require('mongoose');
+mongoose.connect(process.env.mongodburi, {useNewUrlParser: true});
+
+const port = process.env.PORT || 8080;
+app.listen(port, (err) => {
  if (err) {
    return console.log("Error", err);
  }
