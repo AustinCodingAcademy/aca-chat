@@ -1,11 +1,25 @@
+const express = require("express");
+const bodyParser = require("body-parser");
+const dotenv = require('dotenv');
+dotenv.config();
 
+let clientRoutes = require('./routes/clients');
+let messageRoutes = require('./routes/messages');
 
-let clientId = 0;
+const app = express();
+app.use(bodyParser.json());
+app.use(express.static("public"));
 
+app.use(clientRoutes);
+app.use(messageRoutes);
 
-const messages = [
-  {
-    clientId: 0,
-    text: "Welcome To Chat"
-  }
-];
+const mongoose = require('mongoose');
+mongoose.connect(process.env.mongodburi, {useNewUrlParser: true});
+
+const port = process.env.PORT || 8080;
+app.listen(port, (err) => {
+ if (err) {
+   return console.log("Error", err);
+ }
+ console.log("Web server is now listening for messages", err);
+});
