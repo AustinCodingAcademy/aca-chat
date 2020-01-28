@@ -4,10 +4,9 @@ window.onload = () => {
   fetch('http://localhost:8080/clients', {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({'Status': "Client Logged In"})
+    body: JSON.stringify({ 'Status': "Client Logged In" })
   })
     .then(res => {
-      console.log(res)
     })
 }
 
@@ -17,10 +16,9 @@ function postMessage() {
   fetch('http://localhost:8080/message', {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({"id": cliendId, "message": message})
+    body: JSON.stringify({ "id": cliendId, "message": message })
   })
-  .then(res => {
-    console.log(res)
-  })
+    .then(res => {
+    })
 }
 
