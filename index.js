@@ -1,11 +1,13 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+const cors = require('cors');
 const port = process.env.PORT || 8080;
 const bodyParser = require("body-parser");
 // const chatLog = require('./chatLog')
 
 app.use(express.json());
+app.use(cors());
 
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -26,10 +28,11 @@ app.get('/messages', (req, res) => {
 
 app.post('/messages', (req, res) => {
   chatLog.push({
-    "cliendId": cliendId,
+    "cliendId": clientId,
     "text": req.body.message
   })
   res.json(messages)
+  console.log('post successful')
 })
 
 const messages = [

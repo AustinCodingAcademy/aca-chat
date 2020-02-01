@@ -1,4 +1,7 @@
 const express = require('express')
+const cors = require('cors');
+
+app.use(cors());
 
 console.log('I\'m loading')
 
@@ -23,7 +26,7 @@ onLoad()
 
 function postMessage() {
   let message = document.getElementById('sendMes').value;
-  fetch('http://localhost:8080/message', {
+  fetch('http://localhost:8080/messages', {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ "clientid": clientId, "message": message })
