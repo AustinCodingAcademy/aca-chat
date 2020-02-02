@@ -5,14 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>My Store</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="./chat.js"></script>
   </head>
-  <body>
+  <body onload="onLoad()">
     <h1>ACA Chat</h1>
     <div>
-      <input type="text" id="messageBox" />
+      <input type="test" id="messageBox" />
       <button id="sendMes" onclick="postMessage()">Send</button>
-      <div id="chatLog"></div>
+      <ul id="chatLog"></ul>
     </div>
-    <script src="./chat.js"></script>
   </body>
 </html>
