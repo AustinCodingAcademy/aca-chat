@@ -9,7 +9,11 @@ A messaging system is one of the most popular types of software there is. Skype,
 * code your server in index.js
 * write the boilerplate code for an express server using body-parser and serving static files from the /public folder, listening on port 8080
 * create a variable `clientId` and assign 0 to it
+
+
 * create a route for a post to `/clients`. In the callback, increment the clientId by one and `response.send(clientId.toString())`
+
+
 * create a route for a post to `/messages`. In the callback, add the body to the messages array. `response.json(messages)`
 * create a route for a get to `/messages`. In the callback, `response.json(message)`
 
