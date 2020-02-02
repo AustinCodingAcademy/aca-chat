@@ -27,7 +27,7 @@ app.get('/messages', (req, res) => {
 app.post('/messages', (req, res) => {
   console.log(req.body)
   messages.push({
-    "cliendId": req.body.clientId,
+    "clientId": req.body.clientId,
     "text": req.body.message
   })
   res.json(messages)
