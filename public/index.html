@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>My Store</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-   
-</head>
-<body>
-    <script src="chat.js"></script>   
-</body>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="./chat.js"></script>
+  </head>
+  <body onload="onLoad()">
+    <h1>ACA Chat</h1>
+    <div>
+      <input type="test" id="messageBox" />
+      <button id="sendMes" onclick="postMessage()">Send</button>
+      <ul id="chatLog"></ul>
+    </div>
+  </body>
 </html>
